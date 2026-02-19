@@ -22,7 +22,7 @@ I combine design, usability, and business goals to craft products that are both 
 Before focusing on product design, I worked as an **Illustrator, 2D & 3D Artist**, and was even a **Frontend Developer**. This unique mix of visual craft and technical understanding allows me to bridge the gap between abstract concepts and production-ready implementation.
 
 <div class="project-image-container">
-    <img src="{{ '/assets/images/poster.png' | relative_url }}" alt="Team Pixel Fire" class="project-image">
+    <img src="{{ '/assets/images/poster.png' | relative_url }}" alt="Team Pixel Fire" class="project-image about-poster-image">
     <span class="image-caption">I also try to bring fun into work — I’ve even created pixel art of all our team members for our weekly team meetings! 🙂</span>
 </div>
 

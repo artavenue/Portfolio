@@ -809,7 +809,12 @@ footer a:hover {
 }
 
 .detail-content-about {
-    padding-top: 40px;
+    padding-top: 100px;
+}
+
+.detail-content-about h2,
+.detail-content-about h3 {
+    text-align: center;
 }
 
 .detail-content h2 {
@@ -925,6 +930,10 @@ footer a:hover {
 .about-profile-image {
     max-width: 600px;
     border-radius: 32px;
+}
+
+.about-poster-image {
+    max-width: 800px;
 }
 
 /* markdown gallery utilities */
