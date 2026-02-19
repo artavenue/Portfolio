@@ -1,0 +1,9 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+*.bak
+.DS_Store
+projects_old/
+node_modules/
+vendor/

@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<!-- Navigation -->
+<nav class="navbar nav-dark">
+    <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="nav-back-header">← Portfolio</a>
+        <div class="nav-links">
+            <a href="{{ '/' | relative_url }}"
+                class="{% if page.active_nav == 'portfolio' %}active{% endif %}">Portfolio</a>
+            <a href="{{ '/about' | relative_url }}"
+                class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
+        </div>
+    </div>
+</nav>
+
+<div class="detail-header">
+    {% if page.logo %}
+    <img src="{{ page.logo | relative_url }}" class="detail-logo" {% if page.logo_width %}
+        style="height: auto; width: {{ page.logo_width }};" {% endif %} alt="{{ page.company }} Logo">
+    {% endif %}
+    {% if page.meta_label %}
+    <div class="project-meta-label">
+        {{ page.meta_label }}
+    </div>
+    {% endif %}
+    <h1 class="detail-title">{{ page.title }}</h1>
+    <p class="detail-subtitle">{{ page.subtitle }}</p>
+</div>
+
+{% if page.hero_image %}
+{% if page.hero_bg_wrap %}
+<div class="project-hero-wrap" style="background: {{ page.hero_bg }};">
+    <img src="{{ page.hero_image | relative_url }}" class="project-hero-wrap-img" alt="{{ page.title }}">
+</div>
+{% else %}
+<img src="{{ page.hero_image | relative_url }}" class="full-width-image" alt="{{ page.title }}">
+{% endif %}
+{% endif %}
+
+{% if page.hero_placeholder %}
+<div class="project-hero-placeholder"
+    style="background: {{ page.hero_bg | default: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)' }};">
+    <div class="project-hero-placeholder-text">
+        <p class="project-hero-placeholder-title">{{ page.hero_placeholder }}</p>
+        {% if page.hero_placeholder_sub %}<p>{{ page.hero_placeholder_sub }}</p>{% endif %}
+    </div>
+</div>
+{% endif %}
+
+<div class="detail-content">
+    {{ content }}
+
+    <div class="back-link-wrapper">
+        <a href="{{ '/' | relative_url }}" class="btn-premium">← Back to Portfolio</a>
+    </div>
+</div>

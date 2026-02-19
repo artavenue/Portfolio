@@ -1,0 +1,189 @@
+---
+layout: default
+---
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="nav-back-header">
+            <img src="{{ '/assets/images/roberts_face.png' | relative_url }}" alt="Robert Face" class="nav-face">
+        </a>
+        <div class="nav-links">
+            <a href="{{ '/' | relative_url }}" class="active">Portfolio</a>
+            <a href="{{ '/about' | relative_url }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="header-content">
+        <div class="hero-face-container">
+            <img src="{{ '/assets/images/roberts_face.png' | relative_url }}" alt="Robert Pixel Head"
+                class="pixel-head">
+        </div>
+        <div class="header-text">
+            <h1 class="greeting">{{ page.greeting }}</h1>
+            <p class="tagline">{{ page.tagline }}</p>
+        </div>
+    </div>
+</header>
+
+<!-- PROJECT LIST -->
+<div class="project-container">
+
+    <!-- Work Header -->
+    <div class="work-header">
+        <span class="work-tag">Selected Work</span>
+        <h2 class="work-title">Case Studies</h2>
+        <p class="work-desc">
+            Here are some examples of how I combine product strategy, data insights, and visual craft to design
+            impactful solutions.
+        </p>
+    </div>
+
+    {% for project in site.data.featured_projects %}
+    <!-- Project: {{ project.company }} – {{ project.title }} -->
+    <div class="project-card {{ project.gradient }} {% unless project.url != empty %}project-card-disabled{% endunless %}"
+        {% if project.url !=empty %} onclick="location.href='{{ project.url | relative_url }}'" {% else %}
+        onclick="const text = this.querySelector('.project-card-no-link'); text.classList.remove('shake-animation'); void text.offsetWidth; text.classList.add('shake-animation');"
+        {% endif %}>
+        <div class="project-card-content">
+            <div class="project-meta">
+                <span class="project-tag">{{ project.tag }}</span>
+                <span class="project-company">{{ project.company }}</span>
+            </div>
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description }}</p>
+            <div class="{% if project.url != empty %}project-card-link{% else %}project-card-no-link{% endif %}">{{
+                project.link_text | default: "Read Case Study →" }}</div>
+        </div>
+        <div class="project-card-image">
+            <div class="project-card-image-inner">
+                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-card-img">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+<!-- PROCESS SECTION (Tabbed) -->
+<div class="process-container">
+
+    <!-- Tab Navigation -->
+    <div class="process-tabs">
+        <button class="tab-btn active" onclick="openProcess(event, 'Research')">AI & Enterprise UX</button>
+        <button class="tab-btn" onclick="openProcess(event, 'Strategy')">0→1 Product Strategy</button>
+        <button class="tab-btn" onclick="openProcess(event, 'Design')">Systems & Scalability</button>
+        <button class="tab-btn" onclick="openProcess(event, 'Validation')">T-Shaped Execution</button>
+    </div>
+
+    <!-- 1. RESEARCH -->
+    <div id="Research" class="process-content active">
+        <div class="process-image"
+            style="background-image: url('{{ '/assets/images/tabs/tab1.png' | relative_url }}');"></div>
+        <div class="process-text">
+            <h2 class="process-heading">AI & Enterprise UX</h2>
+            <p>Designing for trust in complex environments. I specialize in turning "black box" algorithms into
+                transparent, user-centric tools. At NiCE | Cognigy and Ultimate.ai, I designed interfaces that helped
+                global enterprises build, test, and analyze AI agents with confidence. My focus is on explainability,
+                data visualization, and giving humans control over automation.</p>
+        </div>
+    </div>
+
+    <!-- 2. STRATEGY -->
+    <div id="Strategy" class="process-content">
+        <div class="process-image"
+            style="background-image: url('{{ '/assets/images/tabs/tab2.png' | relative_url }}');"></div>
+        <div class="process-text">
+            <h2 class="process-heading">0→1 Product Strategy</h2>
+            <p>From vague concepts to validated MVPs. I thrive in ambiguity. From leading stakeholder workshops to
+                defining product roadmaps, I bridge the gap between business viability and user needs. My strategic
+                approach to product discovery has driven successful 0→1 launches and directly contributed to the value
+                of products acquired by industry leaders like Zendesk and Sendinblue (Brevo).</p>
+        </div>
+    </div>
+
+    <!-- 3. DESIGN -->
+    <div id="Design" class="process-content">
+        <div class="process-image"
+            style="background-image: url('{{ '/assets/images/tabs/tab3.png' | relative_url }}');"></div>
+        <div class="process-text">
+            <h2 class="process-heading">Systems & Scalability</h2>
+            <p>Building frameworks that grow with the business. Designing for B2B SaaS means designing for scale.
+                Whether it's crafting the highly flexible "Chameleon" design system for Ultimate’s native chat widget,
+                or simplifying the complex architecture of Brevo's core email marketing editor, I build robust systems
+                that empower users and reduce engineering debt.</p>
+        </div>
+    </div>
+
+    <!-- 4. VALIDATION -->
+    <div id="Validation" class="process-content">
+        <div class="process-image"
+            style="background-image: url('{{ '/assets/images/tabs/tab4.png' | relative_url }}');"></div>
+        <div class="process-text">
+            <h2 class="process-heading">T-Shaped Execution</h2>
+            <p>Bridging the gap between design and engineering. With over 14 years of experience and a strong background
+                in frontend development, I don't just draw wireframes. I understand technical constraints and
+                collaborate closely with developers. From high-fidelity prototyping and custom UI illustrations to logic
+                flows, I ensure that strategic concepts are flawlessly executed in production.</p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+    function openProcess(evt, processName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("process-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(processName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Robert Mischuda. Built with pixels &amp; code.</p>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/robert-mischuda/" target="_blank">
+            <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            LinkedIn
+        </a>
+        <a href="mailto:robertmischuda@gmail.com">
+            <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Email
+        </a>
+        <a href="{{ '/assets/images/Robert_Mischuda_CV_Senior_Product_Designer.pdf' | relative_url }}" target="_blank">
+            <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            CV
+        </a>
+    </div>
+</footer>
