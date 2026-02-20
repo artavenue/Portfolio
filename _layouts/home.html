@@ -85,79 +85,134 @@ layout: default
         <button class="tab-btn" onclick="openProcess(event, 'Validation')">T-Shaped Execution</button>
     </div>
 
-    <!-- 1. RESEARCH -->
-    <div id="Research" class="process-content active">
-        <div class="process-image"
-            style="background-image: url('{{ '/assets/images/tabs/tab1.png' | relative_url }}');"></div>
-        <div class="process-text">
-            <h2 class="process-heading">AI & Enterprise UX</h2>
-            <p>Designing for trust in complex environments. I specialize in turning "black box" algorithms into
-                transparent, user-centric tools. At NiCE | Cognigy and Ultimate.ai, I designed interfaces that helped
-                global enterprises build, test, and analyze AI agents with confidence. My focus is on explainability,
-                data visualization, and giving humans control over automation.</p>
+    <!-- Mobile Swipe Track Wrapper -->
+    <div class="process-content-track">
+        <!-- 1. RESEARCH -->
+        <div id="Research" class="process-content active">
+            <div class="process-image"
+                style="background-image: url('{{ '/assets/images/tabs/tab1.png' | relative_url }}');"></div>
+            <div class="process-text">
+                <h2 class="process-heading">AI & Enterprise UX</h2>
+                <p>Designing for trust in complex environments. I specialize in turning "black box" algorithms into
+                    transparent, user-centric tools. At NiCE | Cognigy and Ultimate.ai, I designed interfaces that
+                    helped
+                    global enterprises build, test, and analyze AI agents with confidence. My focus is on
+                    explainability,
+                    data visualization, and giving humans control over automation.</p>
+            </div>
         </div>
+
+        <!-- 2. STRATEGY -->
+        <div id="Strategy" class="process-content">
+            <div class="process-image"
+                style="background-image: url('{{ '/assets/images/tabs/tab2.png' | relative_url }}');"></div>
+            <div class="process-text">
+                <h2 class="process-heading">0→1 Product Strategy</h2>
+                <p>From vague concepts to validated MVPs. I thrive in ambiguity. From leading stakeholder workshops to
+                    defining product roadmaps, I bridge the gap between business viability and user needs. My strategic
+                    approach to product discovery has driven successful 0→1 launches and directly contributed to the
+                    value
+                    of products acquired by industry leaders like Zendesk and Sendinblue (Brevo).</p>
+            </div>
+        </div>
+
+        <!-- 3. DESIGN -->
+        <div id="Design" class="process-content">
+            <div class="process-image"
+                style="background-image: url('{{ '/assets/images/tabs/tab3.png' | relative_url }}');"></div>
+            <div class="process-text">
+                <h2 class="process-heading">Systems & Scalability</h2>
+                <p>Building frameworks that grow with the business. Designing for B2B SaaS means designing for scale.
+                    Whether it's crafting the highly flexible "Chameleon" design system for Ultimate’s native chat
+                    widget,
+                    or simplifying the complex architecture of Brevo's core email marketing editor, I build robust
+                    systems
+                    that empower users and reduce engineering debt.</p>
+            </div>
+        </div>
+
+        <!-- 4. VALIDATION -->
+        <div id="Validation" class="process-content">
+            <div class="process-image"
+                style="background-image: url('{{ '/assets/images/tabs/tab4.png' | relative_url }}');"></div>
+            <div class="process-text">
+                <h2 class="process-heading">T-Shaped Execution</h2>
+                <p>Bridging the gap between design and engineering. With over 14 years of experience and a strong
+                    background
+                    in frontend development, I don't just draw wireframes. I understand technical constraints and
+                    collaborate closely with developers. From high-fidelity prototyping and custom UI illustrations to
+                    logic
+                    flows, I ensure that strategic concepts are flawlessly executed in production.</p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- 2. STRATEGY -->
-    <div id="Strategy" class="process-content">
-        <div class="process-image"
-            style="background-image: url('{{ '/assets/images/tabs/tab2.png' | relative_url }}');"></div>
-        <div class="process-text">
-            <h2 class="process-heading">0→1 Product Strategy</h2>
-            <p>From vague concepts to validated MVPs. I thrive in ambiguity. From leading stakeholder workshops to
-                defining product roadmaps, I bridge the gap between business viability and user needs. My strategic
-                approach to product discovery has driven successful 0→1 launches and directly contributed to the value
-                of products acquired by industry leaders like Zendesk and Sendinblue (Brevo).</p>
-        </div>
+    <!-- Mobile Pagination Dots -->
+    <div class="process-pagination">
+        <div class="dot active" data-target="Research"></div>
+        <div class="dot" data-target="Strategy"></div>
+        <div class="dot" data-target="Design"></div>
+        <div class="dot" data-target="Validation"></div>
     </div>
 
-    <!-- 3. DESIGN -->
-    <div id="Design" class="process-content">
-        <div class="process-image"
-            style="background-image: url('{{ '/assets/images/tabs/tab3.png' | relative_url }}');"></div>
-        <div class="process-text">
-            <h2 class="process-heading">Systems & Scalability</h2>
-            <p>Building frameworks that grow with the business. Designing for B2B SaaS means designing for scale.
-                Whether it's crafting the highly flexible "Chameleon" design system for Ultimate’s native chat widget,
-                or simplifying the complex architecture of Brevo's core email marketing editor, I build robust systems
-                that empower users and reduce engineering debt.</p>
-        </div>
-    </div>
+    <script>
+        // Desktop Tab Functionality
+        function openProcess(evt, processName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("process-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(processName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
 
-    <!-- 4. VALIDATION -->
-    <div id="Validation" class="process-content">
-        <div class="process-image"
-            style="background-image: url('{{ '/assets/images/tabs/tab4.png' | relative_url }}');"></div>
-        <div class="process-text">
-            <h2 class="process-heading">T-Shaped Execution</h2>
-            <p>Bridging the gap between design and engineering. With over 14 years of experience and a strong background
-                in frontend development, I don't just draw wireframes. I understand technical constraints and
-                collaborate closely with developers. From high-fidelity prototyping and custom UI illustrations to logic
-                flows, I ensure that strategic concepts are flawlessly executed in production.</p>
-        </div>
-    </div>
+        // Mobile Swipe Pagination Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.process-content');
+            const dots = document.querySelectorAll('.process-pagination .dot');
+            const track = document.querySelector('.process-content-track');
+
+            if (!track || cards.length === 0 || dots.length === 0) return;
+
+            // Only run observer if we are actually horizontal scrolling (mobile view active)
+            const isMobileSwipeView = () => window.getComputedStyle(track).overflowX === 'auto';
+
+            const observerOptions = {
+                root: track,
+                rootMargin: '0px',
+                threshold: 0.6 // Card is "active" when it is 60% visible in the track
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                if (!isMobileSwipeView()) return; // Don't steal active classes if we are on desktop tabs
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Find which card is intersecting
+                        const cardId = entry.target.id;
+                        // Update dots
+                        dots.forEach(dot => {
+                            if (dot.getAttribute('data-target') === cardId) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
 
 </div>
 
-</div>
-
-<script>
-    function openProcess(evt, processName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("process-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("active");
-        }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
-        document.getElementById(processName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-<!-- Footer -->
 <!-- Footer -->
 <footer>
     <p>&copy; 2026 Robert Mischuda. Built with pixels &amp; code.</p>
