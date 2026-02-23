@@ -1,7 +1,7 @@
 - title: "Automating Trust in AI"
   company: "NiCE | Cognigy"
   tag: "0→1 Product"
-  description: "Built \"The Simulator\" from scratch—an automated stress-testing suite that validates AI agents against real-world scenarios before they go live."
+  description: "Built The Simulator from scratch to give teams an automated way to stress-test their AI agents against simulated customers before they go live."
   link_text: "Read Case Study →"
   url: "/projects/cognigy-simulator/"
   image: "/assets/images/simulator/card_header.png"
