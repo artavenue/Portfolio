@@ -22,10 +22,11 @@ My goal was to design a solution that could bridge this gap between innovation a
 </div>
 
 <div class="detail-section-header">
-<h2>Defining the Digital Customer</h2>
+<h2>
+Simulating Real Customers, Not Ideal Scripts</h2>
 </div>
 
-The first design challenge was figuring out how to tell the computer to act like a human customer. We created a system based on Scenarios. Instead of writing complex code, a user can simply define a Persona, such as a "Frustrated Customer" or a "Detail Oriented Planner." They then give this persona a Mission, which is just the goal they want to achieve, and set the Criteria for what counts as success. This interface had to feel lightweight and easy, ensuring that setting up a test didn't feel like filling out a tax form.
+The first design challenge was figuring out how to instruct the AI to mimic a human customer. We created a system based on Scenarios. Instead of writing complex code, a user can simply define a Persona, such as a "Frustrated Customer" or a "Detail Oriented Planner." They then give this persona a Mission, which is just the goal they want to achieve, and set the Criteria for what counts as success. This interface had to feel lightweight and easy, ensuring that setting up a test didn't feel like filling out a tax form.
 
 <div class="project-image-container">
     <img src="{{ '/assets/images/simulator/simulator_3.png' | relative_url }}" alt="Persona Configuration" class="project-image">
