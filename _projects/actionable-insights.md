@@ -100,8 +100,10 @@ Every interaction in the logs is now marked with its Resolution State. **As seen
 
 This project fundamentally changed how our customers understood and optimized their AI agents.
 
-- **☑️ From Binary to Nuanced:** We moved users from a rigid, binary system to a flexible framework that allowed them to define and track success at multiple points.
-- **☑️ Empowered Decision-Making:** Bot builders could now optimize their strategies based on real insights. The ability to see the flow of conversations and identify exactly where things went right (or wrong) was a game-changer.
-- **☑️ Restored Customer Trust:** For customers who had been frustrated by the limitations of the old system, the new Resolution States were a breath of fresh air. It met their needs and strengthened their trust in the platform.
+**☑️ From Binary to Nuanced:** We moved users from a rigid, binary system to a flexible framework that allowed them to define and track success at multiple points.
+
+**☑️ Empowered Decision-Making:** Bot builders could now optimize their strategies based on real insights. The ability to see the flow of conversations and identify exactly where things went right (or wrong) was a game-changer.
+
+**☑️ Restored Customer Trust:** For customers who had been frustrated by the limitations of the old system, the new Resolution States were a breath of fresh air. It met their needs and strengthened their trust in the platform.
 
 **Personal Learning:** One of the biggest lessons was balancing functionality with simplicity. Early prototypes included too many features and overwhelmed users. By testing and iterating, we learned to prioritize the most critical functionalities.
